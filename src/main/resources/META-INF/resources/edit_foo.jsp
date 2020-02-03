@@ -44,9 +44,10 @@ if (userId > 0) {
 			/>
 		</liferay-expando:custom-attributes-available>
 
-		<aui:input name="categories" type="assetCategories" />
+		<%--<aui:input name="categories" type="assetCategories" />
 
-		<aui:input name="tags" type="assetTags" />
+		<aui:input name="tags" type="assetTags" />--%>
+
 	</aui:fieldset>
 
 	<aui:button-row>

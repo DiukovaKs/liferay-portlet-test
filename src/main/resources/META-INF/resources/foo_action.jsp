@@ -1,4 +1,4 @@
-<%--<%@ include file="/init.jsp" %>
+<%@ include file="/init.jsp" %>
 
 <%
 ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
@@ -35,4 +35,4 @@ else {
 	</portlet:actionURL>
 
 	<liferay-ui:icon-delete url="<%= deleteURL %>" />
-</liferay-ui:icon-menu>--%>
+</liferay-ui:icon-menu>

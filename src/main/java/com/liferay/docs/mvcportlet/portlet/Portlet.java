@@ -1,8 +1,5 @@
 package com.liferay.docs.mvcportlet.portlet;
 
-/*import com.liferay.blade.basic.model.Foo;
-import com.liferay.blade.basic.service.FooLocalService;*/
-//import com.liferay.docs.mvcportlet.portlet.UsersRestService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -57,9 +54,6 @@ public class Portlet extends MVCPortlet {
             if (cmd.equals(Constants.ADD) || cmd.equals(Constants.UPDATE)) {
                updateUser(actionRequest);
             }
-            else if (cmd.equals(Constants.DELETE)) {
-               deleteUser(actionRequest);
-            }
 
             if (Validator.isNotNull(cmd)) {
                 if (SessionErrors.isEmpty(actionRequest)) {
@@ -85,12 +79,6 @@ public class Portlet extends MVCPortlet {
         request.setAttribute("userLocalService", getUserLocalService());
 
         super.render(request, response);
-    }
-
-    protected void deleteUser(ActionRequest actionRequest) throws Exception {
-        long userId = ParamUtil.getLong(actionRequest, "userId");
-
-        getUserLocalService().deleteUser(userId);
     }
 
    protected void updateUser(ActionRequest actionRequest) throws Exception {

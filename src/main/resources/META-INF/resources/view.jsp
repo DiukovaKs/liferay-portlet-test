@@ -4,10 +4,9 @@
 <aui:button-row>
 	<portlet:renderURL var="editFooURL">
 		<portlet:param name="mvcPath" value="/edit_foo.jsp" />
-		<%--<portlet:param name="redirect" value="<%= currentURL %>" />--%>
 	</portlet:renderURL>
 
-	<aui:button href="<%= editFooURL %>" value="add-foo" />
+	<aui:button href="<%= editFooURL %>" value="add" />
 </aui:button-row>
 
 <liferay-ui:search-container
@@ -34,22 +33,6 @@
 		>
 			<strong><%= user.getFullName() %></strong>
 
-			<br />
-
-			<div class="lfr-asset-categories">
-				<liferay-ui:asset-categories-summary
-					className="<%= User.class.getName() %>"
-					classPK="<%= user.getUserId() %>"
-				/>
-			</div>
-
-			<div class="lfr-asset-tags">
-				<liferay-ui:asset-tags-summary
-					className="<%= User.class.getName() %>"
-					classPK="<%= user.getUserId() %>"
-					message="tags"
-				/>
-			</div>
 		</liferay-ui:search-container-column-text>
 
 		<liferay-ui:search-container-column-text
@@ -64,13 +47,11 @@
 			value="<%=user.getJobTitle() %>"
 		/>
 
-
 		<liferay-ui:search-container-column-date
 			name="birthday"
 			valign="top"
 			value="<%=user.getBirthday() %>"
         />
-
 
 		<liferay-ui:search-container-column-text
 			property="phones"
@@ -78,13 +59,7 @@
 			value= "<%= String.valueOf(user.getPhones()) %>"
 		/>
 
-		<%--<liferay-ui:search-container-column-jsp
-			cssClass="entry-action"
-			path="/foo_action.jsp"
-			valign="top"
-		/>--%>
 	</liferay-ui:search-container-row>
-
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>
 
